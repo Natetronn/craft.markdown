@@ -1,13 +1,13 @@
 <?php
 /**
  * A small Twig template filter for parsing text as Markdown within
- * the Blocks CMS
+ * the Craft CMS
  *
  * @link https://github.com/jamierumbelow/blocks.markdown
  * @copyright Copyright (c) 2012, Jamie Rumbelow <http://jamierumbelow.net>
  */
 
-namespace Blocks;
+namespace Craft;
 
 class MarkdownPlugin extends BasePlugin
 {
@@ -17,7 +17,7 @@ class MarkdownPlugin extends BasePlugin
 
 	public function getName()
 	{
-		return Blocks::t('Markdown');
+		return Craft::t('Markdown');
 	}
 
 	public function getVersion()
@@ -45,7 +45,7 @@ class MarkdownPlugin extends BasePlugin
 	 */
 	public function hookAddTwigExtension()
 	{
-		Blocks::import('plugins.markdown.twigextensions.MarkdownTwigExtension');
+		Craft::import('plugins.markdown.twigextensions.MarkdownTwigExtension');
 		return new MarkdownTwigExtension();
 	}
 }
